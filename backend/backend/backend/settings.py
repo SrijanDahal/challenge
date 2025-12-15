@@ -27,7 +27,9 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "django-local-secret")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["https://challenge-7ttmudrxq-goblin-817s-projects.vercel.app/",
+                 "localhost",
+                 "https://challenge-6816.onrender.com/api/scores/"]
 
 
 # Application definition
