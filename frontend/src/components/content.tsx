@@ -15,7 +15,7 @@ interface Scores {
 }
 
 const api = axios.create({
-  baseURL: "http://localhost:8000/api/scores",
+  baseURL: "https://challenge-jy5i.onrender.com",
 });
 
 function Content() {
