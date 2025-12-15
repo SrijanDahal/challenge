@@ -133,4 +133,6 @@ CORS_ALLOWED_ORIGINS = [
      'http://localhost:5173',
      "https://challenge-git-main-goblin-817s-projects.vercel.app",
      "https://challenge-jbaipkv4t-goblin-817s-projects.vercel.app",
+     "https://challenge-phi-roan.vercel.app/",
+     "https://challenge-6816.onrender.com/api/scores",
 ]
