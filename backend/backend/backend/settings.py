@@ -29,7 +29,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["https://challenge-6816.onrender.com",
                  "localhost",
-                 "https://challenge-git-main-goblin-817s-projects.vercel.app"]
+                 "https://challenge-git-main-goblin-817s-projects.vercel.app",
+                 "https://challenge-phi-roan.vercel.app",]
 
 
 # Application definition
@@ -132,6 +133,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
      'http://localhost:5173',
      "https://challenge-git-main-goblin-817s-projects.vercel.app",
-     "https://challenge-jbaipkv4t-goblin-817s-projects.vercel.app",
      "https://challenge-phi-roan.vercel.app",
 ]
