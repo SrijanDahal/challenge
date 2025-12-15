@@ -129,8 +129,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ORIGIN_WHITELIST = [
+CORS_ALLOWED_ORIGINS = [
      'http://localhost:5173',
-     'https://challenge-cfywu9mpt-goblin-817s-projects.vercel.app',
-     'https://challenge-git-main-goblin-817s-projects.vercel.app',
+     "https://challenge-git-main-goblin-817s-projects.vercel.app",
 ]
