@@ -131,5 +131,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ORIGIN_WHITELIST = [
      'http://localhost:5173',
-     'https://challenge-tau-ivory.vercel.app'
+     'https://challenge-cfywu9mpt-goblin-817s-projects.vercel.app'
 ]
