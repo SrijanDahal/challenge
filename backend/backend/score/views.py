@@ -21,3 +21,12 @@ class ScoreViewSet(viewsets.ModelViewSet):
 
         serializer = self.get_serializer(score_obj)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+    # POST /api/scores/reset/
+    @action(detail=False, methods=["post"])
+    def reset(self, request):
+        score.objects.update(score=0)
+        return Response(
+            {"message": "Scores reset"},
+            status=status.HTTP_200_OK
+        )

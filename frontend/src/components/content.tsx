@@ -15,7 +15,7 @@ interface Scores {
 }
 
 const api = axios.create({
-  baseURL: "https://challenge-6816.onrender.com/api/scores",
+  baseURL: "https://challenge-6816.onrender.com/api/scores/",
 });
 
 function Content() {
@@ -82,45 +82,58 @@ function Content() {
   };
 
   return (
-    <table style={tableStyle}>
-      <thead>
-        <tr>
-          <th style={cellStyle}>Srijan</th>
-          <th style={cellStyle}>Subash</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          {/* Srijan */}
-          <td style={cellStyle}>
-            {scores.srijan.score}
-            <div style={buttonContainerStyle}>
-              {button_content.map((v) => (
-                <Buttons
-                  key={v}
-                  content={`Add ${v}`}
-                  onClick={() => addScore(scores.srijan!.id, v)}
-                />
-              ))}
-            </div>
-          </td>
+    <div>
+      <table style={tableStyle}>
+        <thead>
+          <tr>
+            <th style={cellStyle}>Srijan</th>
+            <th style={cellStyle}>Subash</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            {/* Srijan */}
+            <td style={cellStyle}>
+              {scores.srijan.score}
+              <div style={buttonContainerStyle}>
+                {button_content.map((v) => (
+                  <Buttons
+                    key={v}
+                    content={`Add ${v}`}
+                    onClick={() => addScore(scores.srijan!.id, v)}
+                  />
+                ))}
+              </div>
+            </td>
 
-          {/* Subash */}
-          <td style={cellStyle}>
-            {scores.subash.score}
-            <div style={buttonContainerStyle}>
-              {button_content.map((v) => (
-                <Buttons
-                  key={v}
-                  content={`Add ${v}`}
-                  onClick={() => addScore(scores.subash!.id, v)}
-                />
-              ))}
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+            {/* Subash */}
+            <td style={cellStyle}>
+              {scores.subash.score}
+              <div style={buttonContainerStyle}>
+                {button_content.map((v) => (
+                  <Buttons
+                    key={v}
+                    content={`Add ${v}`}
+                    onClick={() => addScore(scores.subash!.id, v)}
+                  />
+                ))}
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <Buttons
+        content="Reset Scores"
+        onClick={() => {
+          api.post("/reset/").then(() => {
+            setScores({
+              srijan: { ...scores.srijan!, score: 0 },
+              subash: { ...scores.subash!, score: 0 },
+            });
+          });
+        }}
+      />
+    </div>
   );
 }
 
